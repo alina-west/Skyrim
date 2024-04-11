@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" id="HTML">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="http://www.hypernylium.com/Files/worldicon.ico"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="MenuBTN.js"></script>
+    <script src="ColorScheme.js"></script>
+
+    <style>.title {
+  font-family: sans-serif;
+  color: #2d70dc;
+  text-align: center;
+}
+.tabContainer {
+  width: 100%;
+  height: 350px;
+}
+.tabContainer .buttonContainer {
+  height: 15%;
+}
+.tabContainer .buttonContainer button {
+  width: 25%;
+  height: 100%;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  background-color: #eee;
+}
+.tabContainer .buttonContainer button:hover {
+  background-color: #d7d4d4;
+}
+.tabContainer .tabPanel {
+  height: 100%;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding-top: 45px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 18px;
+  display: none;
+}</style>
+  </head>
+
+  <body>
+    <div class="screen">
+      <nav id="Navbar">
+        <div id="NavMenuTrigger" class="menu-btn" type="button">
+          <div class="menu-btn__burger"></div>
+        </div>
+        <ul>
+          <div class="logoHolder">
+            <a class="logo" href="#"
+              >Tutor<span class="logo-color-change">wave</span></a
+            >
+          </div>
+          <li>
+            <a href="index.html">Home</a>
+            <a href="link1.html">About Us</a>
+            <a href="link2.html">Team</a>
+            <a class="selected" href="link4.html">Tutors</a>
+            <a href="link5.html">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+      <section style="padding: 140px">
+        <h1 class="title" >Tutors</h1>
+        <div class="tabContainer" style="padding: 40px;">
+          <div class="buttonContainer">
+            <button onclick="showPanel(0,'#2e88c7')">IELTS</button>
+            <button onclick="showPanel(1,'#2158a8')">TOEFL</button>
+            <button onclick="showPanel(2,'#005493')">SAT</button>
+            <button onclick="showPanel(3,'#232a5c')">BASIC ENGLISH</button>
+          </div>
+          <div class="tabPanel">
+            <h2>Jared Lee, American</h2>
+            <h4>Diversity & Wellness Officer & IELTS Tutor Greetings</h4>
+            <p>
+              My name is Jared Lee, and I'm a high school senior based in
+              Houston, TX. Alongside my academic pursuits, I serve as the
+              President of my school's Speech and Debate team and proudly
+              founded a student-run newspaper. Passionate about equitable
+              education, I've embraced a role as an IELTS tutor at Tutorwave,
+              driven by the belief that learning opportunities should be
+              accessible to all.
+            </p>
+          </div>
+          <div class="tabPanel">
+            <h2>Jach Timson</h2>
+            <h4>TOEFL Tutor</h4>
+            <p>
+              Hi, I'm Jach Timson , a senior from Los Angeles, California.
+              Leading my university's Student Diversity Council and tutoring
+              TOEFL at Brighter Futures Tutoring keeps me busy. I'm all about
+              breaking barriers to education and empowering students. Let's
+              learn together!
+            </p>
+          </div>
+          <div class="tabPanel">
+            <h2>Hamza Zulquernain, Pakistani</h2>
+            <h4>Tutor</h4>
+            <p>
+              Hey there, my name is Hamza and I’m from Pakistan, but I live in
+              the US. I’m varsity captain for my school’s golf team and I enjoy
+              Math as well. I achieved a nearly perfect score on the Math
+              section of the SAT and I’m looking forward to teaching you tips
+              and strategies for the SAT.
+            </p>
+          </div>
+          <div class="tabPanel">
+            <h2>Alex Johnson</h2>
+            <h4>Basic English Tutor</h4>
+            <p>
+              Hi, I'm Alex Johnson, a senior from New York City. At Empire State
+              University, I'm involved in student wellness and also tutor basic
+              English at Brighter Horizons Tutoring. Let's build your English
+              skills together!
+            </p>
+          </div>
+        </div>
+</section>
+        <script>
+          var tabButtons = document.querySelectorAll(
+            ".tabContainer .buttonContainer button"
+          );
+          var tabPanels = document.querySelectorAll(".tabContainer  .tabPanel");
+
+          function showPanel(panelIndex, colorCode) {
+            tabButtons.forEach(function (node) {
+              node.style.backgroundColor = "";
+              node.style.color = "";
+            });
+            tabButtons[panelIndex].style.backgroundColor = colorCode;
+            tabButtons[panelIndex].style.color = "white";
+            tabPanels.forEach(function (node) {
+              node.style.display = "none";
+            });
+            tabPanels[panelIndex].style.display = "block";
+            tabPanels[panelIndex].style.backgroundColor = colorCode;
+          }
+          showPanel(0, "#f44336");
+        </script>
+
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <p>&copy; 2024 Tutorwave. All rights reserved.</p>
+                <ul>
+                  <li>
+                    <a class="selected" href="index.html">Home </a>
+                    <a href="link1.html">About Us </a>
+                    <a href="link2.html">Team </a>
+                    <a href="link4.html">Entertainments </a>
+                    <a href="link5.html">Feedback </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </body>
+    </html>
+  </body>
+</html>

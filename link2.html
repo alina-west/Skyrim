@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" id="HTML">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="http://www.hypernylium.com/Files/worldicon.ico"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <nav id="Navbar">
+        <div id="NavMenuTrigger" class="menu-btn" type="button">
+          <div class="menu-btn__burger"></div>
+        </div>
+        <ul>
+          <div class="logoHolder">
+            <a class="logo" href="#"
+              >Tutor<span class="logo-color-change">wave</span></a
+            >
+          </div>
+          <li>
+            <a href="index.html">Home</a>
+            <a href="link1.html">About Us</a>
+            <a class="selected" href="link2.html">Team</a>
+            <a href="link4.html">Tutors</a>
+            <a href="link5.html">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="home">
+      <div class="home-content">
+        <h1 class="headlinetext">Apply to be a tutor!</h1>
+        <p>
+          Being a volunteer tutor at TutorWave is a rewarding experience. We say
+          that because you'll be helping financially disadvantaged students
+          achieve their full potential by being able to attend college. Many of
+          our students wouldn't be able to attend college unless they receive a
+          scholarship, which is usually attained by a high exam scores. However,
+          we aren't all about the score improvement. We aim to cultivate
+          positive relationships with our students to encourage them for future
+          success.
+        </p>
+      </div>
+    </div>
+
+    <!--CONTACT-->
+    <section id="feedback">
+      <div class="top-header">
+        <h1>Contact</h1>
+      </div>
+      <div class="contact__container bd-grid">
+        <form action="" class="contact__form">
+          <input type="text" placeholder="Full name" class="contactInput" />
+          <input
+            type="mail"
+            placeholder="Email"
+            class="contactInput"
+            style="margin-top: 10px"
+          />
+          <input
+            type="mail"
+            placeholder="Country"
+            class="contactInput"
+            style="margin-top: 10px"
+          />
+          <input
+            type="mail"
+            placeholder="Phone Number"
+            class="contactInput"
+            style="margin-top: 10px"
+          />
+          <input
+            type="mail"
+            placeholder="Current Grade and School"
+            class="contactInput"
+            style="margin-top: 10px"
+          />
+          <input
+            type="mail"
+            placeholder="Please provide links to all relevant score reports(IELTS/SAT/TOEFL)"
+            class="contactInput"
+            style="margin-top: 10px"
+          />
+          <textarea
+            placeholder="Write a motivational poster"
+            style="margin-top: 10px"
+            name=""
+            id=""
+            cols="0"
+            rows="10"
+            class="contactInput"
+          ></textarea>
+
+          <div class="btn-group">
+            <a href="#contact" class="btn" onclick="openPopup()">Submit</a>
+            <div class="popup" id="popup">
+              <h4 style="padding-top: 10px">
+                Your request has been sent! Wait for news in your email
+              </h4>
+              <button type="button" onclick="closePopup()">OK</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="container" style="margin-top: 1260px">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2024 Tutorwave. All rights reserved.</p>
+            <ul>
+              <li>
+                <a class="selected" href="index.html">Home </a>
+                <a href="link1.html">About Us </a>
+                <a href="link2.html">Team </a>
+                <a href="link4.html">Entertainments </a>
+                <a href="link5.html">Feedback </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let popup = document.getElementById("popup");
+
+      function openPopup() {
+        popup.classList.add("open-popup");
+      }
+      function closePopup() {
+        popup.classList.remove("open-popup");
+      }
+      /*=============== DARK LIGHT THEME ===============*/
+      const themeButton = document.getElementById("darkmode-toggle");
+      const HTML = document.getElementById("HTML");
+      const darkTheme = "DarkMode";
+
+      const selectedTheme = localStorage.getItem("Selected-Nav-Scheme");
+
+      const getCurrentTheme = () =>
+        HTML.classList.contains(darkTheme) ? "DarkMode" : "light";
+
+      if (selectedTheme) {
+        HTML.classList[selectedTheme === "DarkMode" ? "add" : "remove"](
+          darkTheme
+        );
+      }
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "z" && event.ctrlKey) {
+          event.preventDefault();
+          HTML.classList.toggle(darkTheme);
+          localStorage.setItem("Selected-Nav-Scheme", getCurrentTheme());
+        }
+      });
+    </script>
+
+    <script defer src="MenuBTN.js"></script>
+    <script src="ColorScheme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" id="HTML">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="http://www.hypernylium.com/Files/worldicon.ico"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="MenuBTN.js"></script>
+    <script src="ColorScheme.js"></script>
+  </head>
+  <body style="background-image: url(5240223619018251840_121.jpg)">
+    <div class="screen">
+      <nav id="Navbar">
+        <div id="NavMenuTrigger" class="menu-btn" type="button">
+          <div class="menu-btn__burger"></div>
+        </div>
+        <ul>
+          <div class="logoHolder">
+            <a class="logo" href="#"
+              >Tutor<span class="logo-color-change">wave</span></a
+            >
+          </div>
+          <li>
+            <a class="selected" href="index.html">Home</a>
+            <a href="link1.html">About Us</a>
+            <a href="link2.html">Team</a>
+            <a href="link4.html">Tutors</a>
+            <a href="link5.html">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="home" id="home">
+      <div class="home-content">
+        <h1 class="headlinetext">
+          Free Tutoring for Financially Disadvantaged Students
+        </h1>
+        <p>
+          Apply now to receive free SAT, ACT, TOEFL, IELTS,and general subject
+          tutoring!
+        </p>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2024 Tutorwave. All rights reserved.</p>
+            <ul>
+              <li>
+                <a class="selected" href="index.html">Home </a>
+                <a href="link1.html">About Us </a>
+                <a href="link2.html">Team </a>
+                <a href="link4.html">Entertainments </a>
+                <a href="link5.html">Feedback </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script defer src="MenuBTN.js">
+            const menuBtn = document.querySelector(".menu-btn");
+      let menuOpen = false;
+      menuBtn.addEventListener("click", () => {
+        if (!menuOpen) {
+          menuBtn.classList.add("deactive");
+          menuBtn.classList.add("open");
+          menuOpen = true;
+          setTimeout(function () {
+            menuBtn.classList.remove("deactive");
+          }, 450);
+        } else {
+          menuBtn.classList.add("deactive");
+          setTimeout(function () {
+            menuBtn.classList.remove("deactive");
+          }, 450);
+          menuBtn.classList.remove("open");
+          menuOpen = false;
+        }
+      });
+
+      const NavBar = document.getElementById("Navbar");
+      const NavBTN = document.getElementById("NavMenuTrigger");
+      NavBTN.addEventListener("click", () => {
+        NavBar.classList.toggle("open");
+      });
+    </script>
+    <script src="ColorScheme.js"></script>
+  </body>
+</html>
